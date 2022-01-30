@@ -23,7 +23,7 @@ namespace ConsoleApp
         static readonly string vowels = "aeiouAEIOU";
         static readonly string consonants = "bcdfghjklmnopqqrstuvwxyzBCDFGHJKLMNPQRSTVWXYZ";
         static readonly string specialChars = @"`~!@#$%^&*()_-+={}[]\|<>?,./:;";
-        static string textData = $"The ostriches are capable of reading and writing in multiple languages. They also know how to break codes. "
+        static readonly string textData = $"The ostriches are capable of reading and writing in multiple languages. They also know how to break codes. "
                                 + $"For some reason however, they can't understand pig-latin. This is the only known way for we at the R.A.O. "
                                 + $"to relay top-priority messages from operative to operative without the ostriches knowing. Check out: "
                                 + $"https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html.";
