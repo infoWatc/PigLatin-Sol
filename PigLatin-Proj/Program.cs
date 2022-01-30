@@ -1,5 +1,6 @@
 ﻿/* PIG LATIN EXERCISE
  * 
+ C# .NET CORE 3.1 LTS
      1. If a word starts with a consonant and a vowel, put the first letter of 
         the word at the end of the word and add "ay."
             Example: Happy = appyh + ay = appyhay
