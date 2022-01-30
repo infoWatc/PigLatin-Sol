@@ -27,6 +27,14 @@ namespace ConsoleApp
                                 + $"For some reason however, they can't understand pig-latin. This is the only known way for we at the R.A.O. "
                                 + $"to relay top-priority messages from operative to operative without the ostriches knowing. Check out: "
                                 + $"https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html.";
+        /*
+            OUTPUT:
+            Ethay ostrichesway areway apablecay ofway eadingray andway itingwray inway ultiplemay anguageslay. 
+            Eythay alsoway owknay owhay otay eakbray odescay. Orfay omesay easonray oweverhay, eythay an'tcay 
+            understandway ig-latinpay. Isthay isway ethay onlyway ownknay ayway orfay eway atway ethay R.a.o 
+            otay elayray op-prioritytay essagesmay omfray operativeway otay operativeway ithoutway ethay ostrichesway 
+            owingknay. Eckchay outway: tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay.    
+        */
 
         static void CLog(string text) => Console.WriteLine(text);
         static bool IsSpecialChar(char character)
@@ -77,15 +85,16 @@ namespace ConsoleApp
         }        
         public static void Main()
         {
+            string pigLatinText = "";
+            string[] wordArr = textData.Split(' ');
+
             //Console.Write("Enter your test phrase or words to translate to pig latin > ");
-            //string text = Console.ReadLine(); //testText
+            //string text = Console.ReadLine(); 
+            //wordArr = text.Split(' ');
+
             CLog("\n\t:: Test strings ::");
             
-            string pigLatinText = "";
 
-
-            //string[] wordArr = text.Split(' ');
-            string[] wordArr = textData.Split(' ');
             foreach (string word in wordArr)
             {
                 bool firstIsCap = FirstIsCapital(word[0]);
@@ -98,15 +107,12 @@ namespace ConsoleApp
                         string.Concat(tempPigLatinText[0].ToString().ToUpper(),tempPigLatinText[1..]) 
                         : tempPigLatinText.ToUpper());
                     pigLatinText += tempPigLatinText;
-                }
-                else
-                {
-                    pigLatinText += tempPigLatinText;
-                }
+                } 
+                else pigLatinText += tempPigLatinText;
+                
                 Console.Write($" = {tempPigLatinText}");
                 firstIsCap = false;
-                tempPigLatinText = "";
-                
+                tempPigLatinText = "";                
             }
             CLog($"\n\n{pigLatinText}");
            
