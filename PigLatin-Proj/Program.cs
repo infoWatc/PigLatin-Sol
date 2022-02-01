@@ -83,9 +83,9 @@ namespace ConsoleApp
 			if (IsVowel(text[0]))
 				return text + $"way{specialSymbol}";
 			else if (IsConsonant(text[0]) && IsVowel(text[1]))
-				return (newWord.Length - 1 != 0) ? text[1..] + text[0].ToString() + $"ay{specialSymbol}" : text[0].ToString() + $"ay{specialSymbol}";
+				return (newWord.Length - 1 != 0) ? text.Substring(1) + text[0].ToString() + $"ay{specialSymbol}" : text[0].ToString() + $"ay{specialSymbol}";
 			else if (IsConsonant(text[1]))
-				return text[2..] + text[0] + text[1] + $"ay{specialSymbol}";
+				return text.Substring(2) + text[0] + text[1] + $"ay{specialSymbol}";
 			return text;
 		}
 
