@@ -22,7 +22,7 @@ namespace ConsoleApp
 		static readonly string vowels = "aeiouAEIOU";
 		static readonly string consonants = "bcdfghjklmnopqqrstuvwxyzBCDFGHJKLMNPQRSTVWXYZ";
 		static readonly string specialChars = @"`~!@#$%^&*()_-+={}[]\|<>?,./:;";
-		static readonly string textData = $"The ostriches are capable of reading and writing in multiple languages. They also know how to break codes. " + $"For some reason however, they can't understand pig-latin. This is the only known way for we at the R.A.O. " + $"to relay top-priority messages from operative to operative without the ostriches knowing. Check out: " + $"https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html.";
+		static readonly string textData = $"The ostriches are capable of reading and writing in multiple languages. They also know how to break codes. " + $"For some reason however, they can't understand pig-latin. This is the only known way for we at the R.A.O. " + $"to relay top-priority messages from operative to operative without the ostriches knowing. Check out: " + $"https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html";
 		/*
             OUTPUT:
 			Ethay ostrichesway areway apablecay ofway eadingray andway itingwray inway ultiplemay anguageslay. 
@@ -176,7 +176,7 @@ namespace ConsoleApp
 	knowing. = owingknay.
 	Check = Eckchay
 	out: = outway:
-	https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html. = tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay.
+	https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html. = tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay
 
 	Ethay ostrichesway areway apablecay ofway eadingray andway itingwray inway ultiplemay anguageslay. Eythay alsoway owknay owhay otay eakbray odescay. Orfay omesay easonray oweverhay, eythay an'tcay understandway ig-latinpay. Isthay isway ethay onlyway ownknay ayway orfay eway atway ethay R.a.o otay elayray op-prioritytay essagesmay omfray operativeway otay operativeway ithoutway ethay ostrichesway owingknay. Eckchay outway: tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay.
 
