@@ -104,7 +104,7 @@ namespace ConsoleApp
 				string tempPigLatinText = (firstIsCap) ? HerePiggy(word.ToLower()) + " " : HerePiggy(word) + " ";
 				if (firstIsCap)
 				{
-					tempPigLatinText = ((tempPigLatinText.Length > 0) ? string.Concat(tempPigLatinText[0].ToString().ToUpper(), tempPigLatinText[1..]) : tempPigLatinText.ToUpper());
+					tempPigLatinText = ((tempPigLatinText.Length > 0) ? string.Concat(tempPigLatinText[0].ToString().ToUpper(), tempPigLatinText.Substring(1) : tempPigLatinText.ToUpper());
 					pigLatinText += tempPigLatinText;
 				}
 				else
