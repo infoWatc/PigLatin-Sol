@@ -1,4 +1,4 @@
-﻿/* PIG LATIN EXERCISE
+/* PIG LATIN EXERCISE
  * 
      1. If a word starts with a consonant and a vowel, put the first letter of 
         the word at the end of the word and add "ay."
