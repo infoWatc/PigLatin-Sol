@@ -22,16 +22,8 @@ namespace ConsoleApp
 		static readonly string vowels = "aeiouAEIOU";
 		static readonly string consonants = "bcdfghjklmnopqqrstuvwxyzBCDFGHJKLMNPQRSTVWXYZ";
 		static readonly string specialChars = @"`~!@#$%^&*()_-+={}[]\|<>?,./:;";
-		static readonly string textData = $"The ostriches are capable of reading and writing in multiple languages. They also know how to break codes. " + $"For some reason however, they can't understand pig-latin. This is the only known way for we at the R.A.O. " + $"to relay top-priority messages from operative to operative without the ostriches knowing. Check out: " + $"https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html";
-		/*
-            OUTPUT:
-			Ethay ostrichesway areway apablecay ofway eadingray andway itingwray inway ultiplemay anguageslay. 
-			Eythay alsoway owknay owhay otay eakbray odescay. Orfay omesay easonray oweverhay, eythay an'tcay 
-			understandway ig-latinpay. Isthay isway ethay onlyway ownknay ayway orfay eway atway ethay R.a.o 
-			otay elayray op-prioritytay essagesmay omfray operativeway otay operativeway ithoutway ethay ostrichesway 
-			owingknay. Eckchay outway: tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay.
-
-        */
+		static readonly string textData = "Algorithm: Word used by programmers when they don’t want to explain what they did; Quote by Funny Notebooks.";
+		
 		static void CLog(string text) => Console.WriteLine(text);
 		static bool IsSpecialChar(char character)
 		{
@@ -72,6 +64,7 @@ namespace ConsoleApp
 			int endOfText = text.Length - 1;
 			bool isDigitPresent = IsDigits(text);
 
+			if (text[1] == '.' && text[3] == '.' && endOfText >= 3) text = text.ToUpper();
 			if (text == "\n") return "\n";			
 			else if (isDigitPresent)
 				return text;
@@ -104,7 +97,8 @@ namespace ConsoleApp
 				string tempPigLatinText = (firstIsCap) ? HerePiggy(word.ToLower()) + " " : HerePiggy(word) + " ";
 				if (firstIsCap)
 				{
-					tempPigLatinText = ((tempPigLatinText.Length > 0) ? string.Concat(tempPigLatinText[0].ToString().ToUpper(), tempPigLatinText.Substring(1)) : tempPigLatinText.ToUpper());
+					tempPigLatinText = ((tempPigLatinText.Length > 0) ? string.Concat(tempPigLatinText[0].ToString().ToUpper(), 
+						tempPigLatinText.Substring(1)) : tempPigLatinText.ToUpper());
 					pigLatinText += tempPigLatinText;
 				}
 				else
@@ -120,65 +114,30 @@ namespace ConsoleApp
 	}
 
 	/*
-	Full Output:
+	Output:
 
+			:: Test strings ::
 
-        :: Test strings ::
-
-	The = Ethay
-	ostriches = ostrichesway
-	are = areway
-	capable = apablecay
-	of = ofway
-	reading = eadingray
-	and = andway
-	writing = itingwray
-	in = inway
-	multiple = ultiplemay
-	languages. = anguageslay.
-	They = Eythay
-	also = alsoway
-	know = owknay
-	how = owhay
-	to = otay
-	break = eakbray
-	codes. = odescay.
-	For = Orfay
-	some = omesay
-	reason = easonray
-	however, = oweverhay,
+	Algorithm: = Algorithmway:
+	Word = Ordway
+	used = usedway
+	by = byay
+	programmers = ogrammerspray
+	when = enwhay
 	they = eythay
-	can't = an'tcay
-	understand = understandway
-	pig-latin. = ig-latinpay.
-	This = Isthay
-	is = isway
-	the = ethay
-	only = onlyway
-	known = ownknay
-	way = ayway
-	for = orfay
-	we = eway
-	at = atway
-	the = ethay
-	R.A.O. = R.a.o
+	don't = on'tday
+	want = antway
 	to = otay
-	relay = elayray
-	top-priority = op-prioritytay
-	messages = essagesmay
-	from = omfray
-	operative = operativeway
-	to = otay
-	operative = operativeway
-	without = ithoutway
-	the = ethay
-	ostriches = ostrichesway
-	knowing. = owingknay.
-	Check = Eckchay
-	out: = outway:
-	https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html. = tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay
+	explain = explainway
+	what = atwhay
+	they = eythay
+	did; = idday;
+	Quote = Uoteqay
+	by = byay
+	Funny = Unnyfay
+	Notebooks. = Otebooksnay.
 
-	Ethay ostrichesway areway apablecay ofway eadingray andway itingwray inway ultiplemay anguageslay. Eythay alsoway owknay owhay otay eakbray odescay. Orfay omesay easonray oweverhay, eythay an'tcay understandway ig-latinpay. Isthay isway ethay onlyway ownknay ayway orfay eway atway ethay R.a.o otay elayray op-prioritytay essagesmay omfray operativeway otay operativeway ithoutway ethay ostrichesway owingknay. Eckchay outway: tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay.
+	Algorithmway: Ordway usedway byay ogrammerspray enwhay eythay on'tday antway otay explainway atwhay eythay idday; Uoteqay byay Unnyfay Otebooksnay.
 
 	*/
 }
