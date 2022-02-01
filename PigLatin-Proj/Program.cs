@@ -76,7 +76,7 @@ namespace ConsoleApp
 				return text;
 			if (IsSpecialChar(text[endOfText]))
 			{
-				specialSymbol = text[^1].ToString();
+				specialSymbol = text.Substring(1).ToString();
 				text = text.Substring(0, endOfText);
 			}
 
@@ -104,7 +104,7 @@ namespace ConsoleApp
 				string tempPigLatinText = (firstIsCap) ? HerePiggy(word.ToLower()) + " " : HerePiggy(word) + " ";
 				if (firstIsCap)
 				{
-					tempPigLatinText = ((tempPigLatinText.Length > 0) ? string.Concat(tempPigLatinText[0].ToString().ToUpper(), tempPigLatinText.Substring(1) : tempPigLatinText.ToUpper());
+					tempPigLatinText = ((tempPigLatinText.Length > 0) ? string.Concat(tempPigLatinText[0].ToString().ToUpper(), tempPigLatinText.Substring(1)) : tempPigLatinText.ToUpper());
 					pigLatinText += tempPigLatinText;
 				}
 				else
@@ -117,70 +117,69 @@ namespace ConsoleApp
 
 			CLog($"\n\n{pigLatinText}");
 		}
-	}
+	}	
 	
 	/*
 	Full Output:
 
-				:: Test strings ::
+		:: Test strings ::
 
-			The =  = Ethay 
-			ostriches =  = ostrichesway 
-			are =  = areway 
-			capable =  = apablecay 
-			of =  = ofway 
-			reading =  = eadingray 
-			and =  = andway 
-			writing =  = itingwray 
-			in =  = inway 
-			multiple =  = ultiplemay 
-			languages. =  = anguageslay. 
-			They =  = Eythay 
-			also =  = alsoway 
-			know =  = owknay 
-			how =  = owhay 
-			to =  = otay 
-			break =  = eakbray 
-			codes. =  = odescay. 
-			For =  = Orfay 
-			some =  = omesay 
-			reason =  = easonray 
-			however, =  = oweverhay, 
-			they =  = eythay 
-			can't =  = an'tcay 
-			understand =  = understandway 
-			pig-latin. =  = ig-latinpay. 
-			This =  = Isthay 
-			is =  = isway 
-			the =  = ethay 
-			only =  = onlyway 
-			known =  = ownknay 
-			way =  = ayway 
-			for =  = orfay 
-			we =  = eway 
-			at =  = atway 
-			the =  = ethay 
-			R.A.O. =  = R.a.o 
-			to =  = otay 
-			relay =  = elayray 
-			top-priority =  = op-prioritytay 
-			messages =  = essagesmay 
-			from =  = omfray 
-			operative =  = operativeway 
-			to =  = otay 
-			operative =  = operativeway 
-			without =  = ithoutway 
-			the =  = ethay 
-			ostriches =  = ostrichesway 
-			knowing. =  = owingknay. 
-			Check =  = Eckchay 
-			out: =  = outway: 
-			https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html. =  = tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay. 
+	The =  = Ethay 
+	ostriches =  = ostrichesway 
+	are =  = areway 
+	capable =  = apablecay 
+	of =  = ofway 
+	reading =  = eadingray 
+	and =  = andway 
+	writing =  = itingwray 
+	in =  = inway 
+	multiple =  = ultiplemay 
+	languages. =  = anguageslayanguages. 
+	They =  = Eythay 
+	also =  = alsoway 
+	know =  = owknay 
+	how =  = owhay 
+	to =  = otay 
+	break =  = eakbray 
+	codes. =  = odescayodes. 
+	For =  = Orfay 
+	some =  = omesay 
+	reason =  = easonray 
+	however, =  = oweverhayowever, 
+	they =  = eythay 
+	can't =  = an'tcay 
+	understand =  = understandway 
+	pig-latin. =  = ig-latinpayig-latin. 
+	This =  = Isthay 
+	is =  = isway 
+	the =  = ethay 
+	only =  = onlyway 
+	known =  = ownknay 
+	way =  = ayway 
+	for =  = orfay 
+	we =  = eway 
+	at =  = atway 
+	the =  = ethay 
+	R.A.O. =  = R.a.o 
+	to =  = otay 
+	relay =  = elayray 
+	top-priority =  = op-prioritytay 
+	messages =  = essagesmay 
+	from =  = omfray 
+	operative =  = operativeway 
+	to =  = otay 
+	operative =  = operativeway 
+	without =  = ithoutway 
+	the =  = ethay 
+	ostriches =  = ostrichesway 
+	knowing. =  = owingknaynowing. 
+	Check =  = Eckchay 
+	out: =  = outwayut: 
+	https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html. =  = tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtayttps://web.ics.purdue.edu/~morelanj/RAO/prepare2.html. 
 
-			Ethay ostrichesway areway apablecay ofway eadingray andway itingwray inway ultiplemay anguageslay. Eythay alsoway 
-			owknay owhay otay eakbray odescay. Orfay omesay easonray oweverhay, eythay an'tcay understandway ig-latinpay. Isthay 
-			isway ethay onlyway ownknay ayway orfay eway atway ethay R.a.o otay elayray op-prioritytay essagesmay omfray operativeway 
-			otay operativeway ithoutway ethay ostrichesway owingknay. Eckchay outway: tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtay. 
+	Ethay ostrichesway areway apablecay ofway eadingray andway itingwray inway ultiplemay anguageslayanguages. Eythay alsoway owknay owhay otay eakbray odescayodes. 
+	Orfay omesay easonray oweverhayowever, eythay an'tcay understandway ig-latinpayig-latin. Isthay isway ethay onlyway ownknay ayway orfay eway atway ethay R.a.o 
+	otay elayray op-prioritytay essagesmay omfray operativeway otay operativeway ithoutway ethay ostrichesway owingknaynowing. Eckchay outwayut: tps://web.ics.purdue.edu/~morelanj/RAO/prepare2.htmlhtayttps://web.ics.purdue.edu/~morelanj/RAO/prepare2.html. 
 
 	*/
 }
