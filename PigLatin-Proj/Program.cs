@@ -23,7 +23,7 @@ namespace ConsoleApp
 		static readonly string consonants = "bcdfghjklmnopqqrstuvwxyzBCDFGHJKLMNPQRSTVWXYZ";
 		static readonly string specialChars = @"`~!@#$%^&*()_-+={}[]\|<>?,./:;";
 		static readonly string textData = "Algorithm: Word used by programmers when they don’t want to explain what they did; Quote by Funny Notebooks.";
-		
+
 		static void CLog(string text) => Console.WriteLine(text);
 		static bool IsSpecialChar(char character)
 		{
@@ -32,6 +32,7 @@ namespace ConsoleApp
 					return true;
 			return false;
 		}
+
 
 		static bool IsConsonant(char character)
 		{
@@ -65,12 +66,12 @@ namespace ConsoleApp
 			bool isDigitPresent = IsDigits(text);
 
 			if (text[1] == '.' && text[3] == '.' && endOfText >= 3) text = text.ToUpper();
-			if (text == "\n") return "\n";			
+			if (text == "\n") return "\n";
 			else if (isDigitPresent)
 				return text;
 			if (IsSpecialChar(text[endOfText]))
 			{
-				specialSymbol = text.Substring(text.Length -1).ToString();
+				specialSymbol = text.Substring(text.Length - 1).ToString();
 				text = text.Substring(0, endOfText);
 			}
 			if (IsVowel(text[0]))
@@ -97,7 +98,7 @@ namespace ConsoleApp
 				string tempPigLatinText = (firstIsCap) ? HerePiggy(word.ToLower()) + " " : HerePiggy(word) + " ";
 				if (firstIsCap)
 				{
-					tempPigLatinText = ((tempPigLatinText.Length > 0) ? string.Concat(tempPigLatinText[0].ToString().ToUpper(), 
+					tempPigLatinText = ((tempPigLatinText.Length > 0) ? string.Concat(tempPigLatinText[0].ToString().ToUpper(),
 						tempPigLatinText.Substring(1)) : tempPigLatinText.ToUpper());
 					pigLatinText += tempPigLatinText;
 				}
